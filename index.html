@@ -1,17 +1,369 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiriusDB</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 2em; }
-        h1 { color: #2c3e50; }
-        p { color: #34495e; }
-    </style>
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+
+<link rel="stylesheet" href="/main.378ab27e38429c4e8b4f62563976dfd1f14ee541e4b4130568f87e5d57267df2ac73c74bd664fa9032ac55fd056905bb787986b5a1fd255a773531179c95394c.css" integrity="sha512-N4qyfjhCnE6LT2JWOXbf0fFO5UHktBMFaPh+XVcmffKsc8dL1mT6kDKsVf0FaQW7eHmGtaH9JVp3NTEXnJU5TA==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="/">
+
+  <link rel="canonical" href="/">
+
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Sirius">
+
+<title>SiriusDB</title>
+<meta name="description" content="SQL analytics at GPU speed">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="/">
+  <meta property="og:site_name" content="Sirius">
+  <meta property="og:title" content="SiriusDB">
+  <meta property="og:description" content="SQL analytics at GPU speed">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/cover.png">
+  <meta name="twitter:title" content="SiriusDB">
+  <meta name="twitter:description" content="SQL analytics at GPU speed">
+      <meta name="twitter:site" content="@getdoks">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "/",
+      "name": "Sirius",
+      "description": "SQL analytics at GPU speed"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "url": "/",
+      "name": "Thulite",
+      "image": [
+        {
+          "@id": "/cover.png"
+        }
+      ],
+      "logo": {
+        "@id": "/favicon-512x512.png"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+
 </head>
-<body>
-    <h1>Welcome to SiriusDB</h1>
-    <p>Your future database technology solution!</p>
-</body>
+
+  
+  <body class="single home" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">Sirius</a>
+
+    
+    
+    
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Sirius</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"></ul>
+
+        
+        
+        
+        
+        
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="/"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+<section class="section container-fluid mt-n3 pb-3">
+  
+  <div class="row align-items-center mb-5">
+    <div class="col-md-8 text-center text-md-start">
+      <div class="d-flex align-items-center justify-content-center justify-content-md-center w-100">
+        <img src="/images/sirius-logo.png" alt="Sirius Logo" class="img-fluid me-3" style="max-height: 100px;">
+        <h1 class="mb-0">Sirius</h1>
+      </div>
+      <p class="lead mb-0 d-flex align-items-center justify-content-center justify-content-md-center w-100">SQL Analytics at GPU Speed</p>
+    </div>
+    <div class="col-md-8 text-center text-md-start mt-4">
+      <p class="fs-6"><strong>Sirius is a GPU acceleration layer for SQL analytics</strong>. It plugs into existing engines such as DuckDB via the standard Substrait query format, requiring no query rewrites or major system changes. By offloading query execution to GPUs, Sirius achieves over 10× speedup at the same hardware rental cost, making it well-suited for interactive analytics, financial workloads, and ETL jobs.
+      </p>
+    </div>
+  </div>
+  <div class="d-flex justify-content-start mb-5">
+    <div class="bg-dots"></div>
+  </div>
+  <div class="d-flex flex-column flex-md-row md-align-items-start justify-content-center gap-4 my-2">
+    <div class="d-flex flex-column align-items-center col-md-4">
+      <a href="mailto:siriusdb@cs.wisc.edu" class="btn btn-primary w-40 mb-2" style="width: 160px;">
+        <strong>Email Us</strong>
+      </a>
+      <div class="fs-6 text-center">We’d love to hear from you — questions, contributions, or collaborations.</div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center col-md-4">
+      <a href="https://join.slack.com/t/sirius-db/shared_invite/zt-33tuwt1sk-aa2dk0EU_dNjklSjIGW3vg" class="btn btn-warning w-80 mb-2" style="width: 160px;"> 
+        <strong>Join Slack</strong>
+      </a>
+      <div class="fs-6 text-center">Connect with the community, ask questions, and stay updated.</div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center col-md-4">
+      <a class="btn btn-outline-dark disabled mb-2" style="width: 160px;" aria-disabled="true">
+        GitHub 
+      </a>
+      <div class="fs-6 text-center">Coming soon!</div>
+    </div>
+  </div>
+
+
+
+</section>
+
+<section class="section section-md section-features">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <h2 class="mb-4">Key Features</h2>
+        <div class="col-lg-5">
+          <h2 class="h4">GPU-Native Speed</h2>
+          <p>Sirius delivers order-of-magnitude faster analytics by fully unleashing the power of modern GPUs.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Drop-In Acceleration</h2>
+          <p>Sirius seamlessly plugs into systems like DuckDB and Doris via Substrait, accelerating your SQL workflows without changing your stack.</p>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h4">Deploy Anywhere</h2>
+          <p>Sirius supports both on-premises and cloud deployments, delivering GPU-accelerated performance wherever you run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section section-md section-arch">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+      <h2 class=>Architecture</h2>
+      <img src="/images/sirius-architecture.png" alt="Sirius Architecture Diagram" class="img-fluid">
+      <p style="font-size: 1rem; color: #6c757d; margin-top: 0.5rem;">
+      Systems marked with * are on our roadmap</p>
+    </div>
+  </div>
+</section>
+
+  
+<section class="section section-md section-team">
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-10 text-center">
+      <h2 class="mb-4">Creators of Sirius</h2>
+      <div class="row">
+        
+        <div class="col-8 col-md-5 col-lg-4 mb-4">
+          <img src="/images/team/xiangyao.jpg" alt="Xiangyao Yu" 
+            class="img-fluid rounded-circle mb-2"
+            style="width: 150px; object-fit: cover;">
+          <h5>Xiangyao Yu</h5>
+          
+        </div>
+        
+        <div class="col-8 col-md-5 col-lg-4 mb-4">
+          <img src="/images/team/bobbi.jpg" alt="Bobbi Yogatama" 
+            class="img-fluid rounded-circle mb-2"
+            style="width: 150px; object-fit: cover;">
+          <h5>Bobbi Yogatama</h5>
+          
+        </div>
+        
+        <div class="col-8 col-md-5 col-lg-4 mb-4">
+          <img src="/images/team/yifei.jpeg" alt="Yifei Yang" 
+            class="img-fluid rounded-circle mb-2"
+            style="width: 150px; object-fit: cover;">
+          <h5>Yifei Yang</h5>
+          
+        </div>
+        
+        <div class="col-8 col-md-5 col-lg-4 mb-4">
+          <img src="/images/team/devesh.jpeg" alt="Devesh Sarda" 
+            class="img-fluid rounded-circle mb-2"
+            style="width: 150px; object-fit: cover;">
+          <h5>Devesh Sarda</h5>
+          
+        </div>
+        
+        <div class="col-8 col-md-5 col-lg-4 mb-4">
+          <img src="/images/team/abigale.jpg" alt="Abigale Kim" 
+            class="img-fluid rounded-circle mb-2"
+            style="width: 150px; object-fit: cover;">
+          <h5>Abigale Kim</h5>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<section class="section section-md section-pub">
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-10">
+      <h2 class="mb-4 text-center">Publications</h2>
+      <ul class="list-group list-group-flush">
+        
+        <li class="list-group-item">
+          <strong>Debunking the Myth of Join Ordering: Toward Robust SQL Analytics</strong><br>
+          <span>Junyi Zhao, Kai Su, Yifei Yang, Xiangyao Yu, Paraschos Koutris, Huanchen Zhang</span><br>
+          <strong>SIGMOD</strong>, 2025
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Accelerate Distributed Joins with Predicate Transfer</strong><br>
+          <span>Yifei Yang, Xiangyao Yu</span><br>
+          <strong>SIGMOD</strong>, 2025
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Scaling your Hybrid CPU-GPU DBMS to Multiple GPUs</strong><br>
+          <span>Bobbi Yogatama, Weiwei Gong, Xiangyao Yu</span><br>
+          <strong>VLDB</strong>, 2024
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Predicate Transfer: Efficient Pre-Filtering on Multi-Join Queries</strong><br>
+          <span>Yifei Yang, Hangdong Zhao, Xiangyao Yu, Paraschos Koutris</span><br>
+          <strong>CIDR</strong>, 2024
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Accelerating User-Defined Aggregate Function (UDAF) with Block-wide Execution and JIT Compilation on GPUs</strong><br>
+          <span>Bobbi Yogatama , Brandon Miller, Yunsong Wang, Graham Markall, Jake Hemstad, Gregory Kimball, Xiangyao Yu</span><br>
+          <strong>DaMoN@SIGMOD</strong>, 2023
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Orchestrating Data Placement and Query Execution in Heterogeneous CPU-GPU DBMS</strong><br>
+          <span>Bobbi Yogatama, Weiwei Gong, Xiangyao Yu</span><br>
+          <strong>VLDB</strong>, 2022
+        </li>
+        
+        <li class="list-group-item">
+          <strong>Tile-based Lightweight Integer Compression in GPU</strong><br>
+          <span>Anil Shanbhag*, Bobbi Yogatama*, Xiangyao Yu, Samuel Madden</span><br>
+          <strong>SIGMOD</strong>, 2022
+        </li>
+        
+        <li class="list-group-item">
+          <strong>A Study of the Fundamental Performance Characteristics of GPUs and CPUs for Database Analytics</strong><br>
+          <span>Anil Shanbhag, Samuel Madden, Xiangyao Yu</span><br>
+          <strong>SIGMOD</strong>, 2020
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+      
+      </div>
+    </div>
+    
+    
+    
+    
+
+<script async
+  src="/js/app.c17553444ec7c62f781ddbaa011948f6d85a1bab49420047d68a2b89852a8b36.js"
+  integrity="sha256-wXVTRE7Hxi94HduqARlI9thaG6tJQgBH1ooriYUqizY=">
+</script>
+
+
+
+
+
+
+    
+  </body>
 </html>
